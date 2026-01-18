@@ -1,0 +1,5 @@
+{
+  "workbench.colorTheme": "Catppuccin Macchiato",
+  "dotnet.formatting.organizeImportsOnFormat": true,
+  "editor.stickyScroll.enabled": false
+}

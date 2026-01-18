@@ -1,0 +1,8 @@
+catppuccin-gtk-theme-macchiato
+hyprpanel
+matugen-bin
+matugen-bin-debug
+python-pywal16
+visual-studio-code-bin
+yay-bin
+yay-bin-debug

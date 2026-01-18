@@ -1,0 +1,16 @@
+#window {
+    background-color: #131318;
+    color: #e4e1e9;
+    font-family: "Your Font";
+}
+
+#input {
+    background-color: #47464f;
+    color: #c8c5d0;
+    border: 2px solid #918f9a;
+}
+
+#entry:selected {
+    background-color: #c1c1ff;
+    color: #2a2a60;
+}
