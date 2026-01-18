@@ -1,9 +1,11 @@
 * {
-    background:     #131318;
-    background-alt: #131318;
+    /* Manual opacity: @background + CC (80% opacity) */
+    background:     #1f1f25CC;
+    background-alt: #2a292fCC;
     foreground:     #e4e1e9;
-    selected:       #c1c1ff;
-    active:         #c6c4dd;
-    urgent:         #ffb4ab;
+    selected:       #404178;
+    on-selected:    #e1dfff;
 }
+
+
 
