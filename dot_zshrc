@@ -113,7 +113,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias home="cd ~"
+alias home="cd ~; clear"
 alias ll="ls -la"
 alias c="chezmoi"
 

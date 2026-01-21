@@ -1,38 +1,48 @@
-[config.wallpaper]
-# Whether to set the wallpaper or not
-set = false
+[config]
+mode = "dark"
+contrast = 0.5  # Increased for better visibility
+scheme_type = "expressive"  # This will give you much more color variation!
 
-# The base command to run for applying the wallpaper.
-# Keywords like {{ image }} or anything that works inside of hooks works here.
-# You could also set a static color if you use the color keywords and the wallpaper setter supports it.
-command = "swww img --transition-type center {{ image }}"
+[config.wallpaper]
+command = "swww"
+arguments = ["img", "--transition-type", "center", "--transition-fps", "60"]
+set = true
 
 # For example, killing the wallpaper daemon. Usage is like a normal hook.
 # pre_hook = ""
 
 [templates.hyprland]
 input_path = '~/.config/matugen/templates/hyprland-colors.conf'
-output_path = '~/.config/hypr/colors.conf'
+output_path = '~/.config/hypr/colors/matugen.conf'
+post_hook = 'hyprctl reload'
 
 [templates.alacritty]
 input_path = '~/.config/matugen/templates/alacritty.toml'
-output_path = '~/.config/alacritty/colors.toml'
-post_hook = 'kill -SIGUSR1 $(pgrep alacritty))'
+output_path = '~/.config/alacritty/colors/matugen.toml'
+# post_hook = 'kill -SIGUSR1 $(pgrep alacritty)'
 
-[templates.kitty]
-input_path = '~/.config/matugen/templates/kitty-colors.conf'
-output_path = '~/.config/kitty/colors.conf'
-post_hook = 'kill -SIGUSR1 $(pgrep kitty)'
+[templates.waybar]
+input_path = '~/.config/matugen/templates/colors.css'
+output_path = '~/.config/waybar/colors/matugen.css'
+post_hook = 'pkill waybar; waybar &'
 
 [templates.wofi]
 input_path = '~/.config/matugen/templates/wofi.css'
 output_path = '~/.config/wofi/style.css'
 
 [templates.rofi]
-input_path = '~/.config/matugen/templates/rofi-colors.rasi'
-output_path = '~/.config/rofi/colors.rasi'
+input_path = '~/.config/matugen/templates/rofi.rasi'
+output_path = '~/.config/rofi/launchers/type-7/style-3.rasi'
 
-[templates.waybar]
+[templates.pywalfox]
+input_path = '~/.config/matugen/templates/pywalfox-colors.json'
+output_path = '~/.cache/wal/colors.json'
+post_hook = 'pywalfox update'
+
+[templates.wlogout]
 input_path = '~/.config/matugen/templates/colors.css'
-output_path = '~/.config/waybar/colors.css'
-post_hook = 'pkill waybar; waybar &'
+output_path = '~/.config/wlogout/styles/colors.css'
+
+[templates.swaync]
+input_path = '~/.config/matugen/templates/colors.css'
+output_path = '~/.config/swaync/colors/colors.css'

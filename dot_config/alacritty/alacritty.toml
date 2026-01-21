@@ -1,6 +1,6 @@
 [general]
 import = [
-  "~/.config/alacritty/colors.toml"
+  "~/.config/alacritty/colors/matugen.toml"
 ]
 
 [env]
@@ -12,10 +12,9 @@ padding.y = 10
 
 decorations = "Buttonless"
 
-opacity = 0.8
+opacity = 0.9
 blur = true
 
 [font]
 normal = { family = "MesloLGSNerdFontMono", style = "Regular" }
 size = 10
-

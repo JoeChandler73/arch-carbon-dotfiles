@@ -1,5 +1,7 @@
 {
   "layer": "top",
+  "position": "top",
+  "margin-top": 13,
 
   "modules-left": [
     "custom/launcher", 
@@ -13,15 +15,13 @@
   "modules-right": [
     "custom/pacman", 
     "custom/weather", 
-    "pulseaudio", 
-    "battery", 
-    "network", 
-    "power-profiles-daemon"
+    "pulseaudio",
+    "network"
   ],
 
   "custom/launcher": {
     "format": "󰣇",
-    "on-click": "rofi -show drun"
+    "on-click": "~/.config/rofi/launchers/type-7/launcher.sh"
   },
 
   "clock": {
@@ -32,7 +32,7 @@
   "hyprland/workspaces": {
     "format": "{name}",
     "persistent-workspaces": {
-      "*": 5 // 5 workspaces by default on every monitor
+      "*": 5
     }
   },
 
@@ -92,8 +92,6 @@
     "format-bluetooth": "{volume}% {icon}",
     "format-muted": "",
     "format-icons": {
-        "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
-        "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "",
         "headphone": "",
         "hands-free": "",
         "headset": "",
@@ -108,13 +106,8 @@
     "ignored-sinks": ["Easy Effects Sink"]
   },
 
-  "battery": {
-    "format": "{capacity}% {icon}",
-    "format-icons": ["", "", "", "", ""]
-  },
-
   "network": {
-    "interface": "wlp3s0",
+    "interface": "enp7s0f1",
     "format": "{ifname}",
     "format-wifi": "{essid} ({signalStrength}%) ",
     "format-ethernet": "{ipaddr}/{cidr} 󰊗",
@@ -124,17 +117,5 @@
     "tooltip-format-ethernet": "{ifname} ",
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50
-  },
-
-  "power-profiles-daemon": {
-    "format": "{icon}",
-    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-    "tooltip": true,
-    "format-icons": {
-    "default": "",
-    "performance": "",
-    "balanced": "",
-    "power-saver": ""
-    }
   }
 }
