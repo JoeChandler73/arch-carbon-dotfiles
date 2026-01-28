@@ -1,6 +1,5 @@
-[general]
-import = [
-  "~/.config/alacritty/colors/matugen.toml"
+general.import = [
+  "colors.toml"
 ]
 
 [env]
@@ -18,3 +17,4 @@ blur = true
 [font]
 normal = { family = "MesloLGSNerdFontMono", style = "Regular" }
 size = 10
+

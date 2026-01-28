@@ -1,3 +1,12 @@
+/**
+ *
+ * Author : Aditya Shakya (adi1090x)
+ * Github : @adi1090x
+ * 
+ * Rofi Theme File
+ * Rofi Version: 1.7.3
+ **/
+
 /*****----- Configuration -----*****/
 configuration {
 	modi:                       "drun,run,filebrowser,window";
@@ -12,13 +21,13 @@ configuration {
 
 /*****----- Global Properties -----*****/
 * {
-    font:                        "GeistMono Nerd Font Propo Medium 11";
-    background:                  #131318;
-    background-alt:              #47464f;
-    foreground:                  #e4e1e9;
-    selected:                    #c1c1ff;
-    active:                      #c1c1ff;
-    urgent:                      #ffb4ab;
+    font:                        "JetBrains Mono Nerd Font 10";
+    background:                  #09164C;
+    background-alt:              #102886;
+    foreground:                  #FFFFFF;
+    selected:                    #FA00E9;
+    active:                      #3860FF;
+    urgent:                      #BB00AF;
 }
 
 /*****----- Main Window -----*****/
@@ -62,7 +71,7 @@ inputbar {
     spacing:                     10px;
     padding:                     100px 60px;
     background-color:            transparent;
-    background-image:            url("Pictures/Wallpapers/cat2.jpg", width);
+    background-image:            url("~/.config/rofi/images/c.png", width);
     text-color:                  @foreground;
     orientation:                 horizontal;
     children:                    [ "textbox-prompt-colon", "entry", "dummy", "mode-switcher" ];
@@ -110,7 +119,7 @@ button {
 }
 button selected {
     background-color:            @selected;
-    text-color:                  @background;
+    text-color:                  @foreground;
 }
 
 /*****----- Listview -----*****/
@@ -148,23 +157,23 @@ element normal.normal {
 }
 element normal.urgent {
     background-color:            @urgent;
-    text-color:                  @background;
+    text-color:                  @foreground;
 }
 element normal.active {
     background-color:            @active;
-    text-color:                  @background;
+    text-color:                  @foreground;
 }
 element selected.normal {
     background-color:            @selected;
-    text-color:                  @background;
+    text-color:                  @foreground;
 }
 element selected.urgent {
     background-color:            @urgent;
-    text-color:                  @background;
+    text-color:                  @foreground;
 }
 element selected.active {
     background-color:            @urgent;
-    text-color:                  @background;
+    text-color:                  @foreground;
 }
 element-icon {
     background-color:            transparent;

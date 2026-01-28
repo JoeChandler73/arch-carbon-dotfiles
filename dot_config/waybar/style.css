@@ -1,13 +1,20 @@
-@import "colors/matugen.css";
+@import "colors.css";
 
 * {
     border: none;
-    border-radius: 0;
-    font-family: "JetBrainsMono Nerd Font Propo", Roboto, Helvetica, Arial, sans-serif;
-    font-weight: 600;
+    border-radius: 0px;
+    font-family: "JetBrainsMono Nerd Font Propo";
     font-size: 0.9rem;
+    font-weight: 500;
     min-height: 0;
-    border-radius: 50px;
+    padding: 0;
+    margin: 0;
+}
+
+.modules-center {
+    background: @crust;
+    padding: 6px 12px;
+    border-radius: 28px;
 }
 
 window#waybar {
@@ -15,79 +22,84 @@ window#waybar {
 }
 
 tooltip {
-  background: @surface;
-  border: 1px solid rgba(100, 114, 125, 0.5);
+    background: @mantle;
+    border: 1px solid @surface1;
+    border-radius: 12px;
 }
 
 tooltip label {
-  color: white;
+    color: @text;
+    padding: 6px;
 }
 
-.modules-left {
-    margin-left: 15px;
-}
-
-.modules-right {
-    margin-right: 15px;
-}
-
-#custom-launcher,
 #clock,
 #workspaces,
-#custom-notification,
 #custom-media,
-#custom-pacman,
-#custom-weather,
 #pulseaudio,
-#network {
-    background-color: @surface;
-    color: @primary;
-    margin-right: 10px;
-    padding: 0 10px;
+#network,
+#battery {
+    padding: 0 8px;
+    margin: 0 5px;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
 }
 
 #workspaces {
-    background-color: @surface;
-    color: @primary;
-    padding: 8px 5px;
-    border-radius: 16px;
+    background: transparent;
+    padding: 0;
+    margin: 0 10px 0 10px;
+    border: none;
+    box-shadow: none; 
 }
 
 #workspaces button {
     padding: 0px 6px;
-    margin: 0px 3px;
-    border-radius: 50px;
-    color: transparent;
-    background-color: @on_secondary;
+    margin: 0px 2px;
+    border: none;
+    border-radius: 16px;
+    color: @overlay0;
+    background: transparent;
     transition: all 0.3s ease-in-out;
 }
 
 #workspaces button.active {
-    background-color: @primary;
-    color: @surface;
-    min-width: 30px;
+    background: linear-gradient(135deg, @sky 0%, @flamingo 50%, @red 100%);
+    color: @mantle;
+    min-width: 40px;
     transition: all 0.3s ease-in-out;
-    font-size: 13px;
-    border-radius: 50px;
 }
 
 #workspaces button:hover {
-    background-color: @secondary;
-    color: @surface;
-    border-radius: 16px;
-    min-width: 50px;
-    background-size: 400% 400%;
+    background-color: @surface0;
+    color: @sapphire;
 }
 
 #workspaces button.urgent {
-    background-color: @error;
-    color: @surface;
-    border-radius: 16px;
-    min-width: 50px;
-    background-size: 400% 400%;
-    transition: all 0.3s ease-in-out;
+    background-color: @red;
+    color: @mantle;
+}
+
+#clock {
+  color: @blue;
+  margin: 0;
+}
+
+#pulseaudio {
+  color: @peach;
+  margin-left: 0;
+  font-size: 17px;
+}
+
+#custom-media {
+    color: @sky;
+    margin: 0 0 0 10px;
 }
 
 #network {
-    margin: 0;
+    color: @text;
+}
+
+#battery {
+    color: @green;
 }

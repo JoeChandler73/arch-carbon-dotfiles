@@ -23,4 +23,3 @@ done
 
 # Fallback error JSON if all 5 attempts fail
 echo "{\"text\":\"error\", \"tooltip\":\"error\"}"
-

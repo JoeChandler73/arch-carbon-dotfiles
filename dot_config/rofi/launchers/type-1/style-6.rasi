@@ -24,6 +24,21 @@ configuration {
 @import                          "shared/fonts.rasi"
 
 * {
+    /* Main Accent Color (using Mauve) */
+    selected:                    @mauve;
+    
+    /* Backgrounds */
+    background:                  @base;
+    background-alt:              @mantle;
+    
+    /* Foregrounds */
+    foreground:                  @text;
+    
+    /* Status Colors */
+    urgent:                      @red;
+    active:                      @green;
+
+    /* Theme-Specific Mapping for Style-6 */
     border-colour:               var(selected);
     handle-colour:               var(selected);
     background-colour:           var(background);
@@ -41,7 +56,7 @@ configuration {
     selected-urgent-foreground:  var(background);
     selected-active-background:  var(urgent);
     selected-active-foreground:  var(background);
-    alternate-normal-background: var(background);
+    alternate-normal-background: var(background-alt);
     alternate-normal-foreground: var(foreground);
     alternate-urgent-background: var(urgent);
     alternate-urgent-foreground: var(background);

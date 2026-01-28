@@ -3,58 +3,34 @@
   "position": "top",
   "margin-top": 13,
 
-  "modules-left": [
-    "custom/launcher", 
-    "clock", 
-    "hyprland/workspaces"
-  ],
   "modules-center": [
-    "custom/notification", 
-    "custom/media"
-  ],
-  "modules-right": [
-    "custom/pacman", 
-    "custom/weather", 
+    "clock",
+    "custom/media",
+    "hyprland/workspaces",
     "pulseaudio",
-    "network"
+    "network",
+    "battery"
   ],
-
-  "custom/launcher": {
-    "format": "󰣇",
-    "on-click": "~/.config/rofi/launchers/type-7/launcher.sh"
-  },
 
   "clock": {
     "format": "{:%H:%M}",
-    "format-alt": "{:%a, %d. %b}"
+    "format-alt": "{:%a, %d. %b  %H:%M}",
+    "tooltip-format": "Date: {:%Y-%m-%d}"
   },
 
   "hyprland/workspaces": {
-    "format": "{name}",
-    "persistent-workspaces": {
-      "*": 5
-    }
-  },
-
-  "custom/notification": {
-    "tooltip": true,
-    "format": "<span size='16pt'>{icon}</span>",
+    "format": "{icon}",
     "format-icons": {
-      "notification": "󱅫",
-      "none": "󰂜",
-      "dnd-notification": "󰂠",
-      "dnd-none": "󰪓",
-      "inhibited-notification": "󰂛",
-      "inhibited-none": "󰪑",
-      "dnd-inhibited-notification": "󰂛",
-      "dnd-inhibited-none": "󰪑"
+      "1" : "1",
+      "2" : "2",
+      "3" : "3",
+      "4" : "4",
+      "5" : "5"
     },
-    "return-type": "json",
-    "exec-if": "which swaync-client",
-    "exec": "swaync-client -swb",
-    "on-click": "swaync-client -t -sw",
-    "on-click-right": "swaync-client -d -sw",
-    "escape": true
+    "persistent-workspaces": {
+      "*" : 5
+    },
+    "on-click": "activate"
   },
 
   "custom/media": {
@@ -70,46 +46,30 @@
     "exec": "/home/jic/.config/waybar/scripts/mediaplayer.py 2> /dev/null" // Script in resources/custom_modules folder
   },
 
-  "custom/pacman": {
-    "format": "{}  ",
-    "interval": 3600,                     // every hour
-    "exec": "checkupdates | wc -l",       // # of updates
-    "exec-if": "exit 0",                  // always run; consider advanced run conditions
-    "on-click": "alacritty -e sh -c 'sudo pacman -Syu; pkill -SIGRTMIN+8 waybar; echo; read -n 1 -p \"Press any key to close...\"'",
-    "signal": 8
-  },
-
-  "custom/weather": {
-    "exec": "/home/jic/.config/waybar/scripts/get_weather.sh London+England",
-    "return-type": "json",
-    "format": "{}",
-    "tooltip": true,
-    "interval": 3600
-  },
-
   "pulseaudio": {
-    "format": "{volume}% {icon}",
+    "format": "{icon}",
     "format-bluetooth": "{volume}% {icon}",
-    "format-muted": "",
+    "format-muted": "󰖁",
     "format-icons": {
         "headphone": "",
         "hands-free": "",
-        "headset": "",
+        "headset": "󰋎",
         "phone": "",
         "phone-muted": "",
         "portable": "",
         "car": "",
         "default": ["", ""]
     },
+    "tooltip-format": "Volume: {volume}%",
     "scroll-step": 1,
     "on-click": "pavucontrol",
     "ignored-sinks": ["Easy Effects Sink"]
   },
 
   "network": {
-    "interface": "enp7s0f1",
+    "interface": "wlp3s0",
     "format": "{ifname}",
-    "format-wifi": "{essid} ({signalStrength}%) ",
+    "format-wifi": "({signalStrength}%) ",
     "format-ethernet": "{ipaddr}/{cidr} 󰊗",
     "format-disconnected": "", //An empty format will hide the module.
     "tooltip-format": "{ifname} via {gwaddr} 󰊗",
@@ -117,5 +77,17 @@
     "tooltip-format-ethernet": "{ifname} ",
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50
+  },
+
+  "battery": {
+    "bat": "BAT0",
+    "interval": 60,
+    "states": {
+        "warning": 30,
+        "critical": 15
+    },
+    "format": "{capacity}% {icon}",
+    "format-icons": ["", "", "", "", ""],
+    "max-length": 25
   }
 }
