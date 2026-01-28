@@ -16,5 +16,5 @@ blur = true
 
 [font]
 normal = { family = "MesloLGSNerdFontMono", style = "Regular" }
-size = 10
+size = 11
 
