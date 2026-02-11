@@ -1,5 +1,10 @@
 {
   "workbench.colorTheme": "Catppuccin Frappé",
   "dotnet.formatting.organizeImportsOnFormat": true,
-  "editor.stickyScroll.enabled": false
+  "editor.stickyScroll.enabled": false,
+  "redhat.telemetry.enabled": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "debug.allowBreakpointsEverywhere": true,
+  "editor.tabSize": 2,
+  "rust-analyzer.testExplorer": true
 }
